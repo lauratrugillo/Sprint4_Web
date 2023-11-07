@@ -1,14 +1,14 @@
 .container {
     position: relative;
     width: 100%;
-    padding-right: 0px;
-  }
+    padding: 0px;
 
-#fundo {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+    #fundo {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+  }
 
 .container3 {
     padding-left: 8%;
@@ -35,8 +35,6 @@
         font-weight: bold;
     }
 }
-  
-  
   
 #check {
     width: 80px;
