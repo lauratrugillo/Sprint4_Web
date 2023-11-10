@@ -29,13 +29,16 @@ export default function Menu() {
             <button className="menu-button" onClick={toggleMenu}></button>
         <div className={`navbar ${menuOpen ? 'open' : ''}`}>
             <Link href='/seguro' className="link" onClick={closeMenu}>
-            Seguro
+                Seguro
             </Link>
             <Link href='/duvidas' className="link" onClick={closeMenu}>
-            Dúvidas
+                Dúvidas
             </Link>
             <Link href='/integrantes' className="link" onClick={closeMenu}>
-            Integrantes
+                Integrantes
+            </Link>
+            <Link href='/bicicletas' className="link" onClick={closeMenu}>
+                Bicicletas
             </Link>
         </div>
         </nav>

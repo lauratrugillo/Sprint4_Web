@@ -1,8 +1,41 @@
 "use client"
 
+import { useState } from 'react'
+import axios from 'axios'
 import './Cadastro.scss'
 
 export default function Cadastro(){
+
+    const [formValues, setFormValues] = useState({
+        num_serie: '',
+        modelo: '',
+        marca: '',
+        cor: '',
+        tamanho: '',
+        tipo: '',
+        valor: '',
+        nota_fiscal: '',
+        ano: '',
+        cpf: ''
+    });
+
+    const handleChange = (e) => {
+        setFormValues({
+            ...formValues,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        try {
+            const response = await axios.post('/seguro/cadastro/vistoria', formValues);
+            console.log(response.data);
+        } catch (error) {
+            console.log('Erro ao enviar formulário: ', error);
+        }
+    };
 
     return(
         <main>
@@ -18,17 +51,25 @@ export default function Cadastro(){
                 <h2>Sua bicicleta</h2>
                 <br />
                 
-                    <input type="text" id="valorBicicleta" name="valorBicicleta" placeholder="Qual o valor da sua bicicleta?" required /><br /><br />
+                    <input type="text" id="num_serie" name="num_serie" placeholder="Número de Série" value={formValues.num_serie} onChange={handleChange} required /><br /><br />
                 
-                    <input type="text" id="nome" name="nome" placeholder="Nome" required /><br /><br />
+                    <input type="text" id="modelo" name="modelo" placeholder="Modelo" value={formValues.modelo} onChange={handleChange} required /><br /><br />
 
-                    <input type="text" id="email" name="email" placeholder="E-mail" required /><br /><br />
+                    <input type="text" id="marca" name="marca" placeholder="Marca" value={formValues.marca} onChange={handleChange} required /><br /><br />
 
-                    <input type="text" id="telefone" name="telefone" placeholder="Telefone para contato" required /><br /><br />
+                    <input type="text" id="cor" name="cor" placeholder="Cor" value={formValues.cor} onChange={handleChange} required /><br /><br />
 
-                    <input type="text" id="cpf" name="cpf" placeholder="CPF" required /><br /><br />
+                    <input type='text' id='tamanho' name='tamanho' placeholder='Tamanho' value={formValues.tamanho} onChange={handleChange} /><br /><br />
 
-                    <input type="text" id="cep" name="cep" placeholder="CEP" required /><br /><br />
+                    <input type="text" id="tipo" name="tipo" placeholder="Tipo" value={formValues.tipo} onChange={handleChange} required /><br /><br />
+
+                    <input type="text" id="valor" name="valor" placeholder="Valor" value={formValues.valor} onChange={handleChange} required /><br /><br />
+
+                    <input type="text" id="nota_fiscal" name="nota_fiscal" placeholder="Nota Fiscal" value={formValues.nota_fiscal} onChange={handleChange} required /><br /><br />
+
+                    <input type="text" id="ano" name="ano" placeholder="Ano" value={formValues.ano} onChange={handleChange} required /><br /><br />
+
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF" value={formValues.cpf} onChange={handleChange} required /><br /><br />
 
                     <button type="submit">Continuar</button>
 
