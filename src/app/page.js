@@ -4,6 +4,7 @@ import './page.module.scss'
 export default function Home(){
   return(
     <main>
+      <img src='banner1.png' id='fundo'/>
       <div class='container3'>
             <br />
             <br />
@@ -13,6 +14,7 @@ export default function Home(){
             Sua Bike Segura. Contrate Agora.</p>
             <br />
             <Link href='/seguro'><button>Venha conferir</button></Link>
+            <br />
             <br />
             <br />
       </div>
