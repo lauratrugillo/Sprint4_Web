@@ -30,7 +30,7 @@ export default function Cadastro(){
         e.preventDefault();
     
         try {
-            const response = await axios.post('/seguro/cadastro/vistoria', formValues);
+            const response = await axios.post('http://localhost:8080/demo/webapi/bicicletas/', formValues);
             console.log(response.data);
         } catch (error) {
             console.log('Erro ao enviar formulário: ', error);
@@ -71,7 +71,7 @@ export default function Cadastro(){
 
                     <input type="text" id="cpf" name="cpf" placeholder="CPF" value={formValues.cpf} onChange={handleChange} required /><br /><br />
 
-                    <button type="submit">Continuar</button>
+                    <button type="submit" onClick={handleSubmit}>Continuar</button>
 
                     <br/><br/>
                 </form>
