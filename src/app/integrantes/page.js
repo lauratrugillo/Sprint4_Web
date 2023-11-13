@@ -5,7 +5,7 @@ export default function Integrantes(){
     return(
         <main>
             <div class='container4'>
-                <h1>O grupo TPMNL conta com: </h1>
+                <h1>O grupo TPMNL é constituído por: </h1>
                 <ul>
                     <li>RM: 551989 - Thiago Todeschini</li>
                     <li>RM: 551367 - Pedro de Oliveira Guimarães</li>
