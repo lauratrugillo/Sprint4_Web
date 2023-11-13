@@ -39,6 +39,7 @@ export default function Bicicletas() {
     }
   }, [cpf]);
 
+  
   return (
     <main>
       <div className="container6">
