@@ -18,7 +18,7 @@ export default function Bicicletas() {
       const response = await fetch(`http://localhost:8080/demo/webapi/bicicletas/${cpf}`, {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json', 
         },
       });
 
