@@ -30,7 +30,7 @@ export default function Bicicletas() {
       setShowResults(true);
       setShowError(false); // Define showError como false quando a busca é bem-sucedida
     } catch (error) {
-      setError(`Erro ao buscar bicicletas`);
+      setError(`Erro ao buscar bicicletas: ${error.message}`);
       setShowError(true); // Define showError como true ao encontrar um erro
     }
   };
